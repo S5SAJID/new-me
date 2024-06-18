@@ -1,7 +1,7 @@
 {
-  "name": "new-quote-extention",
+  "name": "new-me-extention",
   "version": "0.0.1",
-  "description": "Chrome Extention to Deliver new Quotes on visiting new tab",
+  "description": "Browser extention for newtab to take it to next level and also deliver new quotes on visiting new tab.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

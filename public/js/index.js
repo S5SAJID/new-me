@@ -1,4 +1,4 @@
-import quotes from './quotes.json' assert { type: 'json' };
+import quotes from '../data/quotes.json' assert { type: 'json' };
 // When Extention DOM Loads
 document.addEventListener('DOMContentLoaded', function() {
     Store.init()
