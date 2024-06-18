@@ -1,0 +1,22 @@
+{
+  "name": "new-quote-extention",
+  "version": "0.0.1",
+  "description": "Chrome Extention to Deliver new Quotes on visiting new tab",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chrome",
+    "extention",
+    "extention",
+    "new",
+    "tab",
+    "quotes"
+  ],
+  "author": "S5SAJID",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.4.3"
+  }
+}

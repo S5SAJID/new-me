@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab</title>
+    <link rel="stylesheet" href="./output-style.css">
+</head>
+<body class="w-screen container mx-auto h-screen bg-gray-900 flex flex-col">
+    <div aria-hidden="true" class="absolute z-[-1] w-[10rem] bottom-0 h-10 blur-3xl bg-gradient-to-br from-cyan-400 to-fuchsia-200 left-1/2 -translate-x-1/2"></div>
+    <div>
+        <h1 class="text-3xl px-20 text-neutral-50 text-center mt-52"><span class="text-neutral-500">“ </span><span class="quote"></span><span class="text-neutral-500"> ”</span></h1>
+        <p class="author-container group text-center text-neutral-500 text-lg mt-3"><span class="text-neutral-700">— </span><span class="author"></span></p>
+    </div>
+    <div class="grid mt-32 px-10 lg:grid-cols-4 grid-cols-3 gap-8 font-space">
+        <div class="bg-neutral-50/5 rounded-xl h-72 overflow-hidden">
+            <textarea class="w-full text-base h-full outline-none focus:bg-neutral-50/[2%] resize-none bg-transparent p-5 text-neutral-400 placeholder-neutral-600 note" id="note-1" placeholder="Your notes goes here..."></textarea>
+        </div>
+        <div class="bg-neutral-50/5 rounded-xl h-72 overflow-hidden">
+            <textarea class="w-full text-base h-full outline-none focus:bg-neutral-50/[2%] resize-none bg-transparent p-5 text-neutral-400 placeholder-neutral-600 note" id="note-2" placeholder="Your notes goes here..."></textarea>
+        </div>
+        <div class="bg-neutral-50/5 rounded-xl h-72 overflow-hidden">
+            <textarea class="w-full text-base h-full outline-none focus:bg-neutral-50/[2%] resize-none bg-transparent p-5 text-neutral-400 placeholder-neutral-600 note" id="note-3" placeholder="Your notes goes here..."></textarea>
+        </div>
+        <div class="bg-neutral-50/5 rounded-xl h-72 overflow-hidden">
+            <textarea class="w-full text-base h-full outline-none focus:bg-neutral-50/[2%] resize-none bg-transparent p-5 text-neutral-400 placeholder-neutral-600 note" id="note-4" placeholder="Your notes goes here..."></textarea>
+        </div>
+    </div>
+</body>
+<script type="module" src="./index.js"></script>
+</html>
