@@ -1,3 +1,5 @@
+<img src="./public/images/New%20Me%20Intro.png" />
+
 ## New Me: 🪄 Transform Your New Tab Experience ✨
 
 **Boost your productivity and creativity with a touch of beauty!** 
