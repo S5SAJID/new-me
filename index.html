@@ -1,32 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Tab</title>
-    <link rel="stylesheet" href="public/css/output.css">
-    <link rel="shortcut icon" href="128.png" type="image/x-icon">
-</head>
-<body class="w-screen container mx-auto h-screen bg-gray-900 flex flex-col">
-    <div aria-hidden="true" class="absolute z-[-1] w-[10rem] bottom-0 h-10 blur-3xl bg-gradient-to-br from-cyan-400 to-fuchsia-200 left-1/2 -translate-x-1/2"></div>
-    <div>
-        <h1 class="text-3xl px-20 text-neutral-50 text-center mt-52"><span class="text-neutral-500">“ </span><span class="quote"></span><span class="text-neutral-500"> ”</span></h1>
-        <p class="author-container group text-center text-neutral-500 text-lg mt-3"><span class="text-neutral-700">— </span><span class="author"></span></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New tab</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #d3dde6;
+        color: #fefefe;
+        font-family: "Satoshi";
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        gap: 0.9rem;
+        height: 100vh;
+      }
+      .clock {
+        padding: 2rem;
+
+        margin-top: 6rem;
+        /* border: .5px solid #fff; */
+        /* border-radius: 10px; */
+        /* background: #e1e8f0; */
+        text-align: center;
+        text-transform: uppercase;
+        /* box-shadow: 0 0 10px #0001; */
+      }
+      .clock h1 {
+        color: #222;
+        font-family: Bahnschrift;
+        font-size: 3.8rem;
+        font-weight: 300;
+      }
+      .clock p {
+        color: #555;
+      }
+      .circlular_clock {
+        width: 10rem;
+        aspect-ratio: 1;
+        margin-bottom: 0.8rem;
+        background-image: url(/public/images/bg.webp);
+        background-size: cover;
+        background-position: center;
+        mix-blend-mode: multiply;
+        position: relative;
+      }
+      .hour,
+      .min,
+      .sec {
+        position: absolute;
+        background: #000;
+        border-radius: 10px;
+        transform-origin: bottom;
+        left: 49.17%;
+      }
+      .min {
+        width: 3px;
+        height: 30%;
+        top: 20%;
+      }
+      .hour {
+        width: 3px;
+        height: 20%;
+        top: 30%;
+      }
+      .sec {
+        width: 3px;
+        height: 40%;
+        top: 15px;
+        left: 49.17%;
+        background: rgb(255, 94, 0);
+      }
+      .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 6px;
+        height: 6px;
+        background: #111;
+        border-radius: 50%;
+      }
+      #search {
+        padding: 0.5rem;
+        outline: 0px;
+        font-family: "Satoshi";
+        width: 50vw;
+        margin-top: 2rem;
+        border: 0.5px solid #fff;
+        border-radius: 10px;
+        background: #e0e8f088;
+        font-family: 2rem;
+      }
+      form {
+        padding: 0 2rem;
+      }
+      .links {
+        display: flex;
+        gap: 5px;
+      }
+      .links .link {
+        padding: 1rem;
+        background: #fff6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.6rem;
+      }
+      .links .link:hover {
+        background: #fff9;
+      }
+      .links .link svg {
+        width: 20px;
+        height: 20px;
+        fill: #333;
+      }
+      .dark:not(img) {
+        filter: invert(98%) hue-rotate(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock">
+      <div class="circlular_clock">
+        <div class="hour"></div>
+        <div class="min"></div>
+        <div class="sec"></div>
+        <div class="center"></div>
+      </div>
+      <h1 id="time">10:23</h1>
+      <p>Friday January</p>
     </div>
-    <div class="grid mt-32 px-10 lg:grid-cols-4 grid-cols-3 gap-8 font-space">
-        <div class="bg-neutral-50/5 rounded-xl h-72 overflow-hidden">
-            <textarea class="w-full text-base h-full outline-none focus:bg-neutral-50/[2%] resize-none bg-transparent p-5 text-neutral-400 placeholder-neutral-600 note" id="note-1" placeholder="Your notes goes here..."></textarea>
-        </div>
-        <div class="bg-neutral-50/5 rounded-xl h-72 overflow-hidden">
-            <textarea class="w-full text-base h-full outline-none focus:bg-neutral-50/[2%] resize-none bg-transparent p-5 text-neutral-400 placeholder-neutral-600 note" id="note-2" placeholder="Your notes goes here..."></textarea>
-        </div>
-        <div class="bg-neutral-50/5 rounded-xl h-72 overflow-hidden">
-            <textarea class="w-full text-base h-full outline-none focus:bg-neutral-50/[2%] resize-none bg-transparent p-5 text-neutral-400 placeholder-neutral-600 note" id="note-3" placeholder="Your notes goes here..."></textarea>
-        </div>
-        <div class="bg-neutral-50/5 rounded-xl h-72 overflow-hidden">
-            <textarea class="w-full text-base h-full outline-none focus:bg-neutral-50/[2%] resize-none bg-transparent p-5 text-neutral-400 placeholder-neutral-600 note" id="note-4" placeholder="Your notes goes here..."></textarea>
-        </div>
+
+    <form action="https://www.google.com/search">
+      <input
+        type="text"
+        placeholder="Search something..."
+        id="search"
+        name="q"
+      />
+    </form>
+
+    <div class="links">
+      <a href="https://www.google.com/" class="link">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          id="lni_lni-google"
+          x="0px"
+          y="0px"
+          viewBox="0 0 64 64"
+          style="enable-background: new 0 0 64 64"
+          xml:space="preserve"
+        >
+          <path
+            d="M61.5,29.2H32.8v8.5h20.6c-1.1,11.8-10.7,16.9-20,16.9c-11.8,0-22.3-9.2-22.3-22.5c0-12.8,10-22.5,22.3-22.5  c9.4,0,15.1,6.1,15.1,6.1l5.8-6.1c0,0-7.8-8.5-21.3-8.5C15.2,1,1.6,15.9,1.6,32c0,15.6,12.8,31,31.7,31C50,63,62,51.7,62,34.8  C62.1,31.3,61.5,29.2,61.5,29.2L61.5,29.2z"
+          />
+        </svg>
+      </a>
+      <a href="https://www.youtube.com/" class="link">
+        <svg
+          style="fill: red"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          id="lni_lni-youtube"
+          x="0px"
+          y="0px"
+          viewBox="0 0 64 64"
+          style="enable-background: new 0 0 64 64"
+          xml:space="preserve"
+        >
+          <path
+            d="M61.7,17.1c-0.7-2.7-2.8-4.8-5.5-5.5C51.4,10.3,32,10.3,32,10.3s-19.4,0-24.2,1.3c-2.7,0.7-4.8,2.8-5.5,5.5C1,22,1,32,1,32  s0,10.1,1.3,14.9c0.7,2.7,2.8,4.8,5.5,5.5c4.8,1.3,24.2,1.3,24.2,1.3s19.4,0,24.2-1.3c2.7-0.7,4.8-2.8,5.5-5.5C63,42.1,63,32,63,32  S63,22,61.7,17.1z M25.8,41.3V22.7L41.9,32L25.8,41.3z"
+          />
+        </svg>
+      </a>
+      <a href="https://web.facebook.com/" class="link">
+        <svg
+          style="fill: royalblue"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          id="lni_lni-facebook-oval"
+          x="0px"
+          y="0px"
+          viewBox="0 0 64 64"
+          style="enable-background: new 0 0 64 64"
+          xml:space="preserve"
+        >
+          <path
+            d="M32,1C14.8,1,1,14.8,1,32s13.8,31,31,31s31-13.8,31-31S49.2,1,32,1z M40.2,19.9c-1.1,0-2,0-3.1,0c-1.4,0-2.3,0.7-2.3,2  c-0.1,1.1,0,2.3,0,3.2c0,0.4,0.1,0.4,0.4,0.4c1.5,0,3.1,0,4.6,0c0.4,0,0.6,0.1,0.6,0.6c-0.1,1.8-0.4,3.7-0.4,5.5  c0,0.4-0.1,0.4-0.6,0.4c-1.3,0-2.4,0-3.7,0c-0.8,0-0.7-0.1-0.7,0.7c0,5.8,0,11.3,0,17.1c0,0.6-0.1,0.7-0.7,0.7c-2.1,0-4.2,0-6.3,0  c-0.6,0-0.7-0.1-0.7-0.7c0-3,0-5.8,0-8.6c0-2.8,0-5.8,0-8.7c0-0.4-0.1-0.7-0.6-0.6c-0.8,0-1.8,0-2.7,0c-0.6,0.3-0.6,0.1-0.6-0.3  c0-1.8,0-3.5,0-5.5c0-0.4,0.1-0.4,0.4-0.4c1,0,1.8,0,2.8,0c0.6,0,0.7-0.1,0.7-0.7c0-1.4,0-2.7,0-4.2c0-1.7,0.4-3.2,1.4-4.6  c1.3-1.7,3.1-2.5,5.1-2.7c2.1-0.1,4.2,0,6.3-0.1c0.3,0,0.4,0.1,0.4,0.4c0,1.8,0,3.7,0,5.5C40.6,19.7,40.5,19.9,40.2,19.9z"
+          />
+        </svg>
+      </a>
     </div>
-</body>
-<script type="module" src="public/js/index.js"></script>
+
+    <script src="script.js"></script>
+  </body>
 </html>
