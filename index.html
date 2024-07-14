@@ -4,128 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New tab</title>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-      body {
-        background: #d3dde6;
-        color: #fefefe;
-        font-family: "Satoshi";
-        font-size: 1rem;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        width: 100vw;
-        gap: 0.9rem;
-        height: 100vh;
-      }
-      .clock {
-        padding: 2rem;
-
-        margin-top: 6rem;
-        /* border: .5px solid #fff; */
-        /* border-radius: 10px; */
-        /* background: #e1e8f0; */
-        text-align: center;
-        text-transform: uppercase;
-        /* box-shadow: 0 0 10px #0001; */
-      }
-      .clock h1 {
-        color: #222;
-        font-family: Bahnschrift;
-        font-size: 3.8rem;
-        font-weight: 300;
-      }
-      .clock p {
-        color: #555;
-      }
-      .circlular_clock {
-        width: 10rem;
-        aspect-ratio: 1;
-        margin-bottom: 0.8rem;
-        background-image: url(/public/images/bg.webp);
-        background-size: cover;
-        background-position: center;
-        mix-blend-mode: multiply;
-        position: relative;
-      }
-      .hour,
-      .min,
-      .sec {
-        position: absolute;
-        background: #000;
-        border-radius: 10px;
-        transform-origin: bottom;
-        left: 49.17%;
-      }
-      .min {
-        width: 3px;
-        height: 30%;
-        top: 20%;
-      }
-      .hour {
-        width: 3px;
-        height: 20%;
-        top: 30%;
-      }
-      .sec {
-        width: 3px;
-        height: 40%;
-        top: 15px;
-        left: 49.17%;
-        background: rgb(255, 94, 0);
-      }
-      .center {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 6px;
-        height: 6px;
-        background: #111;
-        border-radius: 50%;
-      }
-      #search {
-        padding: 0.5rem;
-        outline: 0px;
-        font-family: "Satoshi";
-        width: 50vw;
-        margin-top: 2rem;
-        border: 0.5px solid #fff;
-        border-radius: 10px;
-        background: #e0e8f088;
-        font-family: 2rem;
-      }
-      form {
-        padding: 0 2rem;
-      }
-      .links {
-        display: flex;
-        gap: 5px;
-      }
-      .links .link {
-        padding: 1rem;
-        background: #fff6;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0.6rem;
-      }
-      .links .link:hover {
-        background: #fff9;
-      }
-      .links .link svg {
-        width: 20px;
-        height: 20px;
-        fill: #333;
-      }
-      .dark:not(img) {
-        filter: invert(98%) hue-rotate(180deg);
-      }
-    </style>
+    <link rel="stylesheet" href="public/css/style.css">
   </head>
   <body>
     <div class="clock">
@@ -145,6 +24,7 @@
         placeholder="Search something..."
         id="search"
         name="q"
+        autofocus
       />
     </form>
 
@@ -204,6 +84,20 @@
       </a>
     </div>
 
-    <script src="script.js"></script>
+    <div class="bot">
+      <div class="circle"></div>
+    </div>
+
+    <dialog id="aiDialog" class="chat-container">
+      <div class="chat-messages">
+      </div>
+      <form class="chat-input">
+        <input type="text" placeholder="Type a message...">
+        <button type="submit">Send</button>
+      </form>
+    </dialog>
+
+    <script src="public/js/script.js"></script>
+    <script type="module" src="public/js/chat.js"></script>
   </body>
 </html>

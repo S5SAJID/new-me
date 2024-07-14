@@ -1,22 +1,19 @@
 {
-  "name": "new-me-extention",
-  "version": "0.0.1",
-  "description": "Browser extention for newtab to take it to next level and also deliver new quotes on visiting new tab.",
+  "name": "new-me",
+  "version": "1.0.0",
+  "description": "Chrome Extention for new tab",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
+    "newtab",
     "chrome",
-    "extention",
-    "extention",
-    "new",
-    "tab",
-    "quotes"
+    "extention"
   ],
-  "author": "S5SAJID",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "tailwindcss": "^3.4.3"
+    "@google/generative-ai": "^0.14.1"
   }
 }
